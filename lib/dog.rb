@@ -32,6 +32,7 @@ class Dog
     end
 
     #"#save"- it 'returns an instance of the dog class'
+    #NB.How do we get the unique ID of the record we just created? We query the database table for the ID of the last inserted row:
     def save
         sql = <<-SQL
         INSERT INTO dogs (name,breed)
