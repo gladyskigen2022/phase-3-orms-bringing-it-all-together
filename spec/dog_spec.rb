@@ -33,15 +33,14 @@ describe Dog do
   end
 
   describe ".drop_table" do
-    it 'drops the dogs tabl"#save" do
-    it 'returns an instance of the dog class'e from the database' do
+    it 'drops the dogs table from database' do
       Dog.drop_table
       table_check_sql = "SELECT tbl_name FROM sqlite_master WHERE type='table' AND tbl_name='dogs';"
       expect(DB[:conn].execute(table_check_sql)[0]).to eq(nil)
     end
   end
-
-  describe  do
+  describe "#save" do
+  it 'returns an instance of the dog class' do
       dog = Dog.new(name: "Teddy", breed: "cockapoo") 
       dog.save
 
@@ -187,5 +186,4 @@ describe Dog do
   #     end
   #   end
   # end
-
 end
